@@ -1,0 +1,37 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 注册界面
+        link(rel='stylesheet', href='./stylesheets/reset.css')
+        link(rel='stylesheet', href='./stylesheets/common.css')
+        link(rel='stylesheet', href='./stylesheets/font-awesome.min.css')
+        script(style='text/javascript' , src='/javascripts/zhuce.js')
+    body
+        .wrap.login_wrap
+            .content
+                .logo
+                .login_box
+                    .login_form
+                        .login_title
+                            | 注册
+                        form(action='register', method='post')
+                            .form_text_ipt
+                                input(name='username', type='text', placeholder='用户名' , autocomplete='off')
+                            .ececk_warning
+                                span 用户名不能为空
+                            .form_text_ipt
+                                input(name='password1', type='password', placeholder='密码')
+                            .ececk_warning
+                                span 密码不能为空
+                            .form_text_ipt
+                                input(name='password2', type='password', placeholder='确认密码')
+                            .ececk_warning
+                                span 密码不能为空
+                            .form_btn
+                                button(type='submit' , onclick="return zhuce()") 注册
+                            .form_reg_btn
+                                span 已有帐号？
+                                a(href='/login') 马上登录
+                            div #{error}
+        div(style='text-align:center;')
